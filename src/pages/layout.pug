@@ -1,0 +1,45 @@
+//- layout.pug
+include ../assets/wb-info-block/wb-info-block
+
+block variables
+  -
+    var globalHead = {
+      canonical : '',
+      faviconPathName : '/favicon',
+      title : 'Фулфилмент Вайлдбериз fullfilment wildberries',
+      description : 'Фулфилмент WildBerries',
+      keywords : 'fullfilment, wildberries, fbo, fbs, фулфилмент, помощь в отгрузке wildberries',
+    }
+    var header1 = 'Фулфилмент для продавцов WildBerries'
+    var paragraph1 = 'This is paragraph ONE'
+    var paragraph2 = 'This is paragraph TWO'
+    var interpolated = 'interpolated variable'
+
+
+html
+  head
+    block head
+    meta(charset='utf-8')
+    meta(name='viewport',content='width=device-width, initial-scale=1.0')
+    meta(name='description' CONTENT=globalHead.description)
+    meta(name='keywords' content=globalHead.keywords)
+    link(rel='canonical' href=globalHead.canonical)
+    link(rel="icon" href=globalHead.faviconPathName+'.ico' type="image/x-icon")
+    //- <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    link(rel="shortcut icon" href=globalHead.faviconPathName+'.ico' type="image/x-icon")
+    //- <link rel="shortcut icon" href="/favicon.svg" type="image/svg+xml">
+    title= globalHead.title
+      
+      
+  body
+    header.wb-site-header
+      h1.wb-site-header__h1= header1
+      .wb-site-header__menu-wrapper
+        .wb-site-topm-menu
+          a(class='wb-site-topm-menu__element') Тарифы
+          a(class='wb-site-topm-menu__element') О Нас
+          a(class='wb-site-topm-menu__element' href='tel:+79856355151') +7 985 635 5151
+
+    block content
+      .wb-site-content
+      +wb-info-block
