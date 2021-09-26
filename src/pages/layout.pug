@@ -1,5 +1,6 @@
 //- layout.pug
 include ../assets/wb-info-block/wb-info-block
+include ../assets/top-menu/top-menu
 
 block variables
   -
@@ -14,7 +15,10 @@ block variables
     var paragraph1 = 'This is paragraph ONE'
     var paragraph2 = 'This is paragraph TWO'
     var interpolated = 'interpolated variable'
-
+    var firstBlockInfo = {
+      imageSource : 'https://images.prismic.io/smallexchange-com/21260cc6-c545-4571-8f59-cd96052b327e_SMFE_Site_Buttons-SMALL%403x.png?auto=compress%2Cformat',
+      text : 'alsdkasjdlkajdskal',
+    }
 
 html
   head
@@ -35,11 +39,11 @@ html
     header.wb-site-header
       h1.wb-site-header__h1= header1
       .wb-site-header__menu-wrapper
-        .wb-site-topm-menu
-          a(class='wb-site-topm-menu__element') Тарифы
-          a(class='wb-site-topm-menu__element') О Нас
-          a(class='wb-site-topm-menu__element' href='tel:+79856355151') +7 985 635 5151
+        +top-menu()
 
     block content
       .wb-site-content
-      +wb-info-block
+      +wb-info-block(firstBlockInfo)
+      +wb-info-block(firstBlockInfo)
+      +wb-info-block(firstBlockInfo)
+      +wb-info-block(firstBlockInfo)

@@ -1,2 +1,5 @@
-mixin wb-info-block ()
-  p mixin
+mixin wb-info-block (blockInfoObject)
+  .wb-info-block
+    img.wb-info-block__image(src=blockInfoObject.imageSource)
+
+    p.wb-info-block__text=blockInfoObject.text
