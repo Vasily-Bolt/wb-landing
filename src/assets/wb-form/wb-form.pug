@@ -1,0 +1,11 @@
+mixin wb-form ( formInfoObject )
+  - var inputClass = ''
+  form.wb-form(action="")
+    each inputField in formInfoObject
+      - inputClass = `wb-info-form__input`
+      - 
+        if ( inputField.inputType == 'button' || inputField.inputType == 'submit' ) inputClass = `wb-info-form__button`
+      .wb-info-form__row-wrapper
+        if inputField.textBefore
+          span= inputField.textBefore
+        input(type=inputField.inputType class=inputClass value=inputField.valueInput)

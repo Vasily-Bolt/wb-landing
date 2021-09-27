@@ -1,5 +1,7 @@
 mixin wb-info-block (blockInfoObject)
-  .wb-info-block
+  .wb-info-block(style=`background-image:url(${blockInfoObject.backgroundImageSource})`)
     img.wb-info-block__image(src=blockInfoObject.imageSource)
-
-    p.wb-info-block__text=blockInfoObject.text
+    if blockInfoObject.text
+      p.wb-info-block__text= blockInfoObject.text
+    if blockInfoObject.form
+      +wb-form( blockInfoObject.form )

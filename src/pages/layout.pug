@@ -1,24 +1,58 @@
 //- layout.pug
 include ../assets/wb-info-block/wb-info-block
 include ../assets/top-menu/top-menu
+include ../assets/wb-form/wb-form
+include ../assets/sign-up/sign-up
 
 block variables
   -
     var globalHead = {
       canonical : '',
       faviconPathName : '/favicon',
-      title : 'Фулфилмент Вайлдбериз fullfilment wildberries',
+      title : 'Фулфилмент Вайлдбериз fulfilment wildberries',
       description : 'Фулфилмент WildBerries',
-      keywords : 'fullfilment, wildberries, fbo, fbs, фулфилмент, помощь в отгрузке wildberries',
+      keywords : 'fulfilment, wildberries, fbo, fbs, фулфилмент, помощь в отгрузке wildberries',
     }
     var header1 = 'Фулфилмент для продавцов WildBerries'
     var paragraph1 = 'This is paragraph ONE'
     var paragraph2 = 'This is paragraph TWO'
     var interpolated = 'interpolated variable'
+
     var firstBlockInfo = {
-      imageSource : 'https://images.prismic.io/smallexchange-com/21260cc6-c545-4571-8f59-cd96052b327e_SMFE_Site_Buttons-SMALL%403x.png?auto=compress%2Cformat',
+      imageSource : '/images/test.jpeg',
       text : 'alsdkasjdlkajdskal',
     }
+
+    var contactBlockInfo = {
+      backgroundImageSource : '/images/background1.jpg',
+      //- imageSource : '/images/test.jpeg',
+      form : [{
+        inputType : 'text',
+        textBefore : 'Имя:',
+        idInput : 'name',
+      },{
+        inputType : 'text',
+        textBefore : 'Телефон:',
+        idInput : 'phone',
+      },{
+        inputType : 'submit',
+        textBefore : '',
+        idInput : 'SUBMIT',
+      },
+      ],
+      //- text : `<form><input type='text><input type='text><input type='text></form>`,
+    }
+    var topMenu = [{
+      name : 'Тарифы',
+      link : '',
+    },{
+      name : 'О Нас',
+      link : '',
+    },{
+      name : '+7 985 635 5151',
+      link : 'tel:+79856355151',
+    }
+    ]
 
 html
   head
@@ -39,11 +73,14 @@ html
     header.wb-site-header
       h1.wb-site-header__h1= header1
       .wb-site-header__menu-wrapper
-        +top-menu()
+        +top-menu(topMenu)
 
-    block content
-      .wb-site-content
-      +wb-info-block(firstBlockInfo)
-      +wb-info-block(firstBlockInfo)
-      +wb-info-block(firstBlockInfo)
-      +wb-info-block(firstBlockInfo)
+    article
+      +signup
+      block content
+        .wb-site-content
+        +wb-info-block(contactBlockInfo)
+        +wb-info-block(firstBlockInfo)
+        +wb-info-block(firstBlockInfo)
+        +wb-info-block(firstBlockInfo)
+    footer
