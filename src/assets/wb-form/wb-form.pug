@@ -7,5 +7,5 @@ mixin wb-form ( formInfoObject )
         if ( inputField.inputType == 'button' || inputField.inputType == 'submit' ) inputClass = `wb-info-form__button`
       .wb-info-form__row-wrapper
         if inputField.textBefore
-          span= inputField.textBefore
+          span.wb-info-form__text-before-input= inputField.textBefore
         input(type=inputField.inputType class=inputClass value=inputField.valueInput)

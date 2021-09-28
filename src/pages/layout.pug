@@ -18,12 +18,9 @@ block variables
     var paragraph2 = 'This is paragraph TWO'
     var interpolated = 'interpolated variable'
 
-    var firstBlockInfo = {
-      imageSource : '/images/test.jpeg',
-      text : 'alsdkasjdlkajdskal',
-    }
-
-    var contactBlockInfo = {
+    //*BlockInfo = { headerText, text, imageSource, backgroundImageSource, form }
+    var infoBlocks = [
+    {
       backgroundImageSource : '/images/background1.jpg',
       //- imageSource : '/images/test.jpeg',
       form : [{
@@ -40,8 +37,28 @@ block variables
         idInput : 'SUBMIT',
       },
       ],
-      //- text : `<form><input type='text><input type='text><input type='text></form>`,
-    }
+    },{
+      imageSource : '/images/delivery.jpg',
+      headerText : 'Доставка',
+      text : 'Наличие собственного парка автомобилей позволяет нам быстро и дешево забирать и доставлять товары до склада FBS',
+    },{
+      imageSource : '/images/packing.jpg',
+      headerText : 'Упаковка товара',
+      text : 'Упакуем и промаркируем товары под WildBerries. Постоянно следим за обновлением маркировки и соблюдаем все актуальные требования',
+    },{
+      imageSource : '/images/order-picking.jpg',
+      headerText : 'Комплектация заказов',
+      text : 'Качественно соберем заказ любой сложности, 0% недовложений',
+    },{
+      imageSource : '/images/acceptance.jpg',
+      headerText : 'Прием товара от поставщика',
+      text : 'Заберем Ваш товар у поставщика, проверим каждую единицу на целостность и примем на ответственное хранение',
+    },{
+      imageSource : '/images/store-goods.jpg',
+      headerText : 'Хранение товара на складе',
+      text : 'Все виды хранения: напольное, полочное, мелкоячеистое. Подберем самый подходящий и доступный вариант',
+    }]
+
     var topMenu = [{
       name : 'Тарифы',
       link : '',
@@ -79,8 +96,7 @@ html
       +signup
       block content
         .wb-site-content
-        +wb-info-block(contactBlockInfo)
-        +wb-info-block(firstBlockInfo)
-        +wb-info-block(firstBlockInfo)
-        +wb-info-block(firstBlockInfo)
+        each infoBlock in infoBlocks
+          +wb-info-block(infoBlock)
+
     footer
