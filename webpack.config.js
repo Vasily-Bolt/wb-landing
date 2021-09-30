@@ -69,7 +69,7 @@ module.exports = {
   },
   output: {
     filename: filename('js'),
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, 'docs'),
     publicPath: ASSET_PATH
   },
   // entry: {
@@ -77,7 +77,7 @@ module.exports = {
   // },
   // output: {
   //   filename: filename('js'),
-  //   path: path.resolve(__dirname, 'dist'),
+  //   path: path.resolve(__dirname, 'docs'),
   //   publicPath: ASSET_PATH
   // },
   // resolve: {
@@ -117,7 +117,7 @@ module.exports = {
       patterns: [
         {
           from: path.resolve(__dirname, 'src/images/'),
-          to: path.resolve(__dirname, 'dist/images/')
+          to: path.resolve(__dirname, 'docs/images/')
         },
     ]}),
     new MiniCssExtractPlugin({
