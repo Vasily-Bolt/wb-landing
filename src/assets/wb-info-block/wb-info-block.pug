@@ -1,12 +1,13 @@
 mixin wb-info-block (blockInfoObject)
   - 
-    var wbInfoBlockClasses = `wb-info-block--background-standart wb-info-block--vert-centered`
+    var wbInfoBlockClasses = `wb-info-block--vert-centered wb-info-block--background-standart`
     var headerTextStyles = ``
     if ( blockInfoObject.styles ) {
+      if ( blockInfoObject.styles.includes('background-blue-strip') ) wbInfoBlockClasses += ` wb-info-block--background-blue-strip`
       if ( blockInfoObject.styles.includes('top-margin') ) wbInfoBlockClasses += ` wb-info-block--top-margin`
       if ( blockInfoObject.styles.includes('bigger-header-text') ) headerTextStyles += `wb-info-block__title--bigger-text`
     }
-  .wb-info-block.wb-info-block--flexed-column(class=wbInfoBlockClasses style=`background-image:url(${blockInfoObject.backgroundImageSource})`)
+  .wb-info-block.wb-info-block--flexed-column(class=wbInfoBlockClasses)
     if blockInfoObject.imageSource
       img.wb-info-block__image(src=blockInfoObject.imageSource)
     if blockInfoObject.headerText
@@ -15,3 +16,6 @@ mixin wb-info-block (blockInfoObject)
       p.wb-info-block__text= blockInfoObject.text
     if blockInfoObject.form
       +wb-form( blockInfoObject.form )
+    if blockInfoObject.list
+      +wb-unmarked-list( blockInfoObject.list )
+    

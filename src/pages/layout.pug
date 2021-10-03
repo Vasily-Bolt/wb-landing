@@ -2,6 +2,7 @@
 include ../assets/wb-info-block/wb-info-block
 include ../assets/top-menu/top-menu
 include ../assets/wb-form/wb-form
+include ../assets/wb-unmarked-list/wb-unmarked-list
 include ../assets/sign-up/sign-up
 
 block variables
@@ -21,8 +22,19 @@ block variables
     //*BlockInfo = { headerText, text, imageSource, backgroundImageSource, form }
     var infoBlocks = [
     {
+      headerText : 'Что мы предлагаем',
+      list : [
+        `Примем Вашу продукцию (или заберем у поставщика)`,
+        `Упакуем по требованиям WildBerries`,
+        `Напечатаем ярлыки, этикетки, штрихкоды на термотрансферном оборудовании`,
+        `Промаркиркуем`,
+        `Предоставим короба и упаковку`,
+        `Доставим и сдадим на склад Гольяново`,
+        ],
+      styles : 'top-margin bigger-header-text background-blue-strip',
+    },{
       headerText : 'Наши услуги',
-      styles : 'bigger-header-text',
+      styles : 'bigger-header-text top-margin',
     },{
       imageSource : 'images/delivery.jpg',
       headerText : 'Доставка',
@@ -45,7 +57,6 @@ block variables
       text : 'Все виды хранения: напольное, полочное, мелкоячеистое. Подберем самый подходящий и доступный вариант',
     },{
       headerText : 'Перезвоните мне',
-      styles : 'top-margin',
       form : [{
         inputType : 'text',
         textBefore : 'Имя:',
