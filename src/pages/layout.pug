@@ -21,22 +21,8 @@ block variables
     //*BlockInfo = { headerText, text, imageSource, backgroundImageSource, form }
     var infoBlocks = [
     {
-      backgroundImageSource : 'images/background1.jpg',
-      //- imageSource : '/images/test.jpeg',
-      form : [{
-        inputType : 'text',
-        textBefore : 'Имя:',
-        idInput : 'name',
-      },{
-        inputType : 'text',
-        textBefore : 'Телефон:',
-        idInput : 'phone',
-      },{
-        inputType : 'submit',
-        textBefore : '',
-        idInput : 'SUBMIT',
-      },
-      ],
+      headerText : 'Наши услуги',
+      styles : 'bigger-header-text',
     },{
       imageSource : 'images/delivery.jpg',
       headerText : 'Доставка',
@@ -57,7 +43,25 @@ block variables
       imageSource : 'images/store-goods.jpg',
       headerText : 'Хранение товара на складе',
       text : 'Все виды хранения: напольное, полочное, мелкоячеистое. Подберем самый подходящий и доступный вариант',
-    }]
+    },{
+      headerText : 'Перезвоните мне',
+      styles : 'top-margin',
+      form : [{
+        inputType : 'text',
+        textBefore : 'Имя:',
+        idInput : 'name',
+      },{
+        inputType : 'text',
+        textBefore : 'Телефон:',
+        idInput : 'phone',
+      },{
+        inputType : 'submit',
+        textBefore : '',
+        idInput : 'SUBMIT',
+      },
+      ],
+    },
+    ]
 
     var topMenu = [{
       name : 'Тарифы',

@@ -1,5 +1,12 @@
+.wb-info-block__title--bigger-text
+  font-weight: bold
+  
+.wb-info-block__title
+  font-size: 1.2em
+
 .wb-info-block__text
   padding: 0.4em
+  text-align: justify
 
 .wb-info-block__image
   display: block
@@ -7,17 +14,27 @@
   width: 50%
   max-height: 100%
 
-.wb-info-block--bacground-standart
+.wb-info-block--background-standart
   background-color: rgb(255, 255, 255)
   background-repeat: repeat
   background-size: contain
 
-.wb-info-block
+.wb-info-block--top-margin
+  margin-top: 1vh
+
+.wb-info-block--vert-centered
+  margin-right: auto
+  margin-left: auto
+
+.wb-info-block--flexed-column
   display: flex
   align-items: center
+  justify-content: center
+  flex-direction: column
   flex-wrap: wrap
+
+.wb-info-block
   width: 90%
-  margin: 1vh auto
-  min-height: 30vh
+  min-height: 10vh
   max-width: 500px
   // box-shadow: 5px 5px 10px black
