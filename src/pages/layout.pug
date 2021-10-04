@@ -20,46 +20,35 @@ block variables
     var interpolated = 'interpolated variable'
 
     //*BlockInfo = { headerText, text, imageSource, backgroundImageSource, form }
-    var infoBlocks = [
+    var ourServicesInfoBlocks = [
     {
-      headerText : 'Что мы предлагаем',
-      list : [
-        `Примем Вашу продукцию (или заберем у поставщика)`,
-        `Упакуем по требованиям WildBerries`,
-        `Напечатаем ярлыки, этикетки, штрихкоды на термотрансферном оборудовании`,
-        `Промаркиркуем`,
-        `Предоставим короба и упаковку`,
-        `Доставим и сдадим на склад Гольяново`,
-        ],
-      styles : 'top-margin bold-header-text',
-    },{
       headerText : 'Наши услуги',
       styles : 'bold-header-text red-header-text top-margin',
     },{
       imageSource : 'images/delivery.jpg',
       headerText : 'Доставка',
       text : 'Наличие собственного парка автомобилей позволяет нам быстро и дешево забирать и доставлять товары до склада FBS',
-      styles : 'bold-header-text',
+      styles : 'bold-header-text plate-in-row',
     },{
       imageSource : 'images/packing.jpg',
       headerText : 'Упаковка товара',
       text : 'Упакуем и промаркируем товары под WildBerries. Постоянно следим за обновлением маркировки и соблюдаем все актуальные требования',
-      styles : 'bold-header-text',
+      styles : 'bold-header-text plate-in-row',
     },{
       imageSource : 'images/order-picking.jpg',
       headerText : 'Комплектация заказов',
       text : 'Качественно соберем заказ любой сложности, 0% недовложений',
-      styles : 'bold-header-text',
+      styles : 'bold-header-text plate-in-row',
     },{
       imageSource : 'images/acceptance.jpg',
       headerText : 'Прием товара от поставщика',
       text : 'Заберем Ваш товар у поставщика, проверим каждую единицу на целостность и примем на ответственное хранение',
-      styles : 'bold-header-text',
+      styles : 'bold-header-text plate-in-row',
     },{
       imageSource : 'images/store-goods.jpg',
       headerText : 'Хранение товара на складе',
       text : 'Все виды хранения: напольное, полочное, мелкоячеистое. Подберем самый подходящий и доступный вариант',
-      styles : 'bold-header-text',
+      styles : 'bold-header-text plate-in-row',
     },{
       headerText : 'Перезвоните мне',
       form : [{
@@ -79,6 +68,19 @@ block variables
     },
     ]
 
+    var AboutUsInfoBlock = {
+      headerText : 'Что мы предлагаем',
+      list : [
+        `Примем Вашу продукцию (или заберем у поставщика)`,
+        `Упакуем по требованиям WildBerries`,
+        `Напечатаем ярлыки, этикетки, штрихкоды на термотрансферном оборудовании`,
+        `Промаркиркуем`,
+        `Предоставим короба и упаковку`,
+        `Доставим и сдадим на склад Гольяново`,
+        ],
+      styles : 'top-margin bold-header-text',
+    }
+    
     var topMenu = [{
       name : 'Тарифы',
       link : '',
@@ -116,7 +118,11 @@ html
       +signup
       block content
         .wb-site-content
-          each infoBlock in infoBlocks
-            +wb-info-block(infoBlock)
+          .wb-site-content__about-us
+            +wb-info-block(AboutUsInfoBlock)
+
+          .wb-site-content__our-services-info-blocks
+            each infoBlock in ourServicesInfoBlocks
+              +wb-info-block(infoBlock)
 
     footer

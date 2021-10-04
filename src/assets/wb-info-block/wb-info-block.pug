@@ -5,9 +5,9 @@ mixin wb-info-block (blockInfoObject)
     if ( blockInfoObject.styles ) {
       if ( blockInfoObject.styles.includes('background-blue-strip') ) wbInfoBlockClasses += ` wb-info-block--background-blue-strip`
       if ( blockInfoObject.styles.includes('top-margin') ) wbInfoBlockClasses += ` wb-info-block--top-margin`
+      if ( blockInfoObject.styles.includes('plate-in-row') ) wbInfoBlockClasses += ` wb-info-block--plate-in-row`
       if ( blockInfoObject.styles.includes('bold-header-text') ) headerTextStyles += ` wb-info-block__title--bold-text`
       if ( blockInfoObject.styles.includes('red-header-text') ) headerTextStyles += ` wb-info-block__title--red-text`
-
     }
   .wb-info-block.wb-info-block--flexed-column(class=wbInfoBlockClasses)
     if blockInfoObject.imageSource
