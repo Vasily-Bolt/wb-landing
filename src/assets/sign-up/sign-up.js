@@ -3,12 +3,12 @@ $(()=> {
 
   class Block {
     constructor(JQueryselector) {
-      this.widthHeightIncrement = 7;
       this.selector = $(`${JQueryselector}`);
       this.parentOfSelector = $(this.selector).parent();
+      this.modalSelector = 'signup';
+      this.widthHeightIncrement = this.selector.siblings('p').height()/2;
       this.width = this.parentOfSelector.width()+this.widthHeightIncrement;
       this.height = this.parentOfSelector.height()+this.widthHeightIncrement;
-      this.modalSelector = 'signup';
       this.modalHTML = `
       <div id='${this.modalSelector}'>
         <div class='signup__modal-container'>
@@ -20,7 +20,7 @@ $(()=> {
             </p>
             <p class='signup__modal-form-line'>Как можно обращаться<input type='text' name='name'></p>
             <p class='signup__modal-form-line'>Оставьте контактный телефон<input type='tel' name='phone'></p>
-            <p class='signup__modal-form-line'>Подтвердите отправку данных<input type='submit' value='Записаться'></p>
+            <p class='signup__modal-form-line'>Подтвердите отправку данных<input type='submit' value='Отправить'></p>
             <p class='signup__modal-form-line'>Передумали писать? Звоните!<input type='button' id='signup__modal-form-close' value='Закрыть форму'></p>
           </form>
         </div>

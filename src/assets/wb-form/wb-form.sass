@@ -1,5 +1,7 @@
 .wb-info-form__text-before-input
   font-weight: bold
+  line-height: 2em
+  margin-right: .5em
   color: rgb(177, 177, 177)
   
 .wb-info-form__button
@@ -7,11 +9,18 @@
   width: 80%
   height: 5vh
 
+.wb-info-form__input:focus
+  outline: none
+  box-shadow: 0 0 10px black
+
 .wb-info-form__input
   border: none
   background: rgb(84, 77, 84)
   color: rgb(255, 255, 255)
+  height: 2em
+  font-size: 1em
   text-indent: .2em
+  border-radius: .5em
 
 .wb-info-form__row-wrapper
   display: flex
@@ -20,6 +29,9 @@
   margin: .5em 0
 
 .wb-form
+  // display: flex
+  // justify-content: space-between
   margin: 0 auto
-  width: 75%
+  // width: 100%
+  // font-size: 1.5rem
   min-width: 15em

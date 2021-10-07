@@ -49,7 +49,24 @@ block variables
       headerText : 'Хранение товара на складе',
       text : 'Все виды хранения: напольное, полочное, мелкоячеистое. Подберем самый подходящий и доступный вариант',
       styles : 'bold-header-text plate-in-row',
-    },{
+    },
+    ]
+
+    var AboutUsInfoBlock = {
+      id : 'about-us',
+      headerText : 'Что мы предлагаем',
+      list : [
+        `Примем Вашу продукцию от ТК (или заберем у поставщика)`,
+        `Упакуем по требованиям WildBerries`,
+        `Напечатаем ярлыки, этикетки, штрихкоды на термотрансферном оборудовании`,
+        `Промаркиркуем`,
+        `Предоставим короба и упаковку`,
+        `Доставим и сдадим на склад Гольяново`,
+        ],
+      styles : 'top-margin bold-header-text',
+    }
+
+    var formInfoBlock = {
       headerText : 'Перезвоните мне',
       form : [{
         inputType : 'text',
@@ -63,22 +80,7 @@ block variables
         inputType : 'submit',
         textBefore : '',
         idInput : 'SUBMIT',
-      },
-      ],
-    },
-    ]
-
-    var AboutUsInfoBlock = {
-      headerText : 'Что мы предлагаем',
-      list : [
-        `Примем Вашу продукцию (или заберем у поставщика)`,
-        `Упакуем по требованиям WildBerries`,
-        `Напечатаем ярлыки, этикетки, штрихкоды на термотрансферном оборудовании`,
-        `Промаркиркуем`,
-        `Предоставим короба и упаковку`,
-        `Доставим и сдадим на склад Гольяново`,
-        ],
-      styles : 'top-margin bold-header-text',
+      }],
     }
     
     var topMenu = [{
@@ -86,7 +88,7 @@ block variables
       link : '',
     },{
       name : 'О Нас',
-      link : '',
+      link : '#aboutUs',
     },{
       name : '+7 985 635 5151',
       link : 'tel:+79856355151',
@@ -118,11 +120,12 @@ html
       +signup
       block content
         .wb-site-content
-          .wb-site-content__about-us
+          .wb-site-content__about-us(id='aboutUs')
             +wb-info-block(AboutUsInfoBlock)
 
           .wb-site-content__our-services-info-blocks
             each infoBlock in ourServicesInfoBlocks
               +wb-info-block(infoBlock)
-
+          .wb-site-content__feedback-form
+            +wb-info-block(formInfoBlock)
     footer
