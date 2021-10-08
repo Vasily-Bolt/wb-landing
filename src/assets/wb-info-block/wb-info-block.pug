@@ -4,7 +4,8 @@ mixin wb-info-block (blockInfoObject)
     var headerTextStyles = ``
     if ( blockInfoObject.styles ) {
       if ( blockInfoObject.styles.includes('background-blue-strip') ) wbInfoBlockClasses += ` wb-info-block--background-blue-strip`
-      if ( blockInfoObject.styles.includes('top-margin') ) wbInfoBlockClasses += ` wb-info-block--top-margin`
+      if ( blockInfoObject.styles.includes('top-margin-five') ) wbInfoBlockClasses += ` wb-info-block--top-margin-five`
+      if ( blockInfoObject.styles.includes('top-margin-ten') ) wbInfoBlockClasses += ` wb-info-block--top-margin-ten`
       if ( blockInfoObject.styles.includes('plate-in-row') ) wbInfoBlockClasses += ` wb-info-block--plate-in-row`
       if ( blockInfoObject.styles.includes('bold-header-text') ) headerTextStyles += ` wb-info-block__title--bold-text`
       if ( blockInfoObject.styles.includes('red-header-text') ) headerTextStyles += ` wb-info-block__title--red-text`

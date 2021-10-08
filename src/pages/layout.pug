@@ -23,7 +23,7 @@ block variables
     var ourServicesInfoBlocks = [
     {
       headerText : 'Наши услуги',
-      styles : 'bold-header-text red-header-text top-margin',
+      styles : 'bold-header-text red-header-text top-margin-ten',
     },{
       imageSource : 'images/delivery.jpg',
       headerText : 'Доставка',
@@ -33,27 +33,26 @@ block variables
       imageSource : 'images/packing.jpg',
       headerText : 'Упаковка товара',
       text : 'Упакуем и промаркируем товары под WildBerries. Постоянно следим за обновлением маркировки и соблюдаем все актуальные требования',
-      styles : 'bold-header-text plate-in-row',
+      styles : 'bold-header-text plate-in-row top-margin-five',
     },{
       imageSource : 'images/order-picking.jpg',
       headerText : 'Комплектация заказов',
       text : 'Качественно соберем заказ любой сложности, 0% недовложений',
-      styles : 'bold-header-text plate-in-row',
+      styles : 'bold-header-text plate-in-row top-margin-five',
     },{
       imageSource : 'images/acceptance.jpg',
       headerText : 'Прием товара от поставщика',
       text : 'Заберем Ваш товар у поставщика, проверим каждую единицу на целостность и примем на ответственное хранение',
-      styles : 'bold-header-text plate-in-row',
+      styles : 'bold-header-text plate-in-row top-margin-five',
     },{
       imageSource : 'images/store-goods.jpg',
       headerText : 'Хранение товара на складе',
       text : 'Все виды хранения: напольное, полочное, мелкоячеистое. Подберем самый подходящий и доступный вариант',
-      styles : 'bold-header-text plate-in-row',
+      styles : 'bold-header-text plate-in-row top-margin-five',
     },
     ]
 
-    var AboutUsInfoBlock = {
-      id : 'about-us',
+    var aboutUsInfoBlock = {
       headerText : 'Что мы предлагаем',
       list : [
         `Примем Вашу продукцию от ТК (или заберем у поставщика)`,
@@ -62,11 +61,23 @@ block variables
         `Промаркиркуем`,
         `Предоставим короба и упаковку`,
         `Доставим и сдадим на склад Гольяново`,
+        `Сделаем лендинг для Вашего товара`,
         ],
-      styles : 'top-margin bold-header-text',
+      styles : 'top-margin-five bold-header-text',
+    }
+
+    var pricelistInfoBlock = {
+      headerText : 'Тарифы',
+      list : [
+        `Приемка, проверка, переупаковка (с подарком если надо), этикетки и маркировка - 50р (этикетка и крепёж - булавки, пластиковые стяжки с нас, распечатка на термопринтере маркировок и на принтере этикеток). Если этикетки и крепёж Ваши, то 40р`,
+        `Хранение 1 мес бесплатно, далее 500р за каждые пол кубометра`,
+        `Доставка до склада в Гольяново - 500р не зависимо от количества`,
+        ],
+      styles : 'top-margin-five bold-header-text',
     }
 
     var formInfoBlock = {
+      styles : 'top-margin-ten',
       headerText : 'Перезвоните мне',
       form : [{
         inputType : 'text',
@@ -85,7 +96,7 @@ block variables
     
     var topMenu = [{
       name : 'Тарифы',
-      link : '',
+      link : '#pricelist',
     },{
       name : 'О Нас',
       link : '#aboutUs',
@@ -121,11 +132,14 @@ html
       block content
         .wb-site-content
           .wb-site-content__about-us(id='aboutUs')
-            +wb-info-block(AboutUsInfoBlock)
+            +wb-info-block(aboutUsInfoBlock)
 
           .wb-site-content__our-services-info-blocks
             each infoBlock in ourServicesInfoBlocks
               +wb-info-block(infoBlock)
           .wb-site-content__feedback-form
             +wb-info-block(formInfoBlock)
+          .wb-site-content__pricelist(id='pricelist')
+            +wb-info-block(pricelistInfoBlock)
     footer
+      p Услуги предоставляются ИП Барышникова Е.Н. ОГРНИП ( 772070279057 )
